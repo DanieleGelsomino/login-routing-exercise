@@ -1,7 +1,8 @@
 button{
     border-radius: 5px;
     cursor: pointer;
-    transition:0.3s ease-in-out !important ;
+    font-weight: 600;
+    transition:0.3s ease-in-out ;
     &:hover{
       transform: scale(1.1);
     }
@@ -10,5 +11,5 @@ button{
 a{
   text-decoration: none;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
 }
