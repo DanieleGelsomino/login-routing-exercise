@@ -1,29 +1,37 @@
 <div class="position-absolute top-50 start-50 translate-middle">
     <form [formGroup]="loginform" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+        <!-- INTESTAZIONE FORM -->
         <div class="text-center mb-4">
             <h1>Accedi</h1>
             <h5>Inserisci la tua e-mail e password</h5>
         </div>
-
-        <p *ngIf="!loginform.get('email')?.valid && loginform.get('email')?.touched" class="error">inserisci
-            una email corretta
-        </p>
+        <!-- / INTESTAZIONE FORM -->
+        <!-- INPUT EMAIL + PASSWORD -->
         <mat-form-field appearance="outline" class="mt-3">
             <mat-label>Email</mat-label>
             <input type="email" name="email" matInput ngModel required email formControlName="email">
             <mat-hint>Es. mariorossi@gmail.com</mat-hint>
         </mat-form-field>
-
-        <p *ngIf="!loginform.get('password')?.valid && loginform.get('password')?.touched" class="error mt-3">inserisci
-            una password corretta
-        </p>
         <mat-form-field appearance="outline" class="mt-3">
             <mat-label>Password</mat-label>
             <input type="password" name="password" matInput #input maxlength="10" ngModel required
                 formControlName="password">
             <mat-hint align="end">max 10 caratteri {{input.value.length}}/10</mat-hint>
         </mat-form-field>
-        <button mat-raised-button color="primary" class="mt-4">Login</button>
+        <!-- / INPUT EMAIL + PASSWORD -->
+        <!-- ERRORI VALIDAZIONE -->
+        <ul class="mt-2">
+            <li *ngIf="!loginform.get('email')?.valid && loginform.get('email')?.touched" class="error">
+                inserisci una email corretta
+            </li>
+            <li *ngIf="!loginform.get('password')?.valid && loginform.get('password')?.touched" class="error">
+                inserisci una password corretta
+            </li>
+        </ul>
+        <!-- / ERRORI VALIDAZIONE -->
+        <!-- BTN + RECUPERO PASSWORD -->
+        <button mat-raised-button color="primary" class="mt-2">Login</button>
         <a routerLink="/recupera-password" class="text-center mt-3">Hai dimenticato la password?</a>
+        <!-- / BTN + RECUPERO PASSWORD -->
     </form>
 </div>
