@@ -24,10 +24,6 @@
             <input type="password" name="password" matInput #input maxlength="10" ngModel required>
             <mat-hint align="end">max 10 caratteri {{input.value.length}}/10</mat-hint>
         </mat-form-field>
-        <mat-checkbox class="example-margin" color="primary" [(ngModel)]="checked">Ho letto, compreso e accettato i
-            termini e
-            condizioni
-        </mat-checkbox>
         <button mat-raised-button color="primary" class="mt-4">Conferma</button>
     </form>
 </div>

@@ -10,6 +10,7 @@ import { PasswordRecoveryComponent } from './componenti/password-recovery/passwo
 import { NotfoundComponent } from './componenti/notfound/notfound.component';
 import { WelcomeComponent } from './componenti/welcome/welcome.component';
 import { WelcomebackComponent } from './componenti/welcomeback/welcomeback.component';
+import { ProfileUserComponent } from './componenti/profile-user/profile-user.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -24,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     NotfoundComponent,
     WelcomeComponent,
     WelcomebackComponent,
+    ProfileUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     FormsModule,
     MatCheckboxModule,
     LayoutModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

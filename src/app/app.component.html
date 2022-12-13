@@ -3,14 +3,20 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <a mat-menu-item routerLink="login">
+    <a mat-menu-item routerLink="login" *ngIf="!showLink()">
       Login
     </a>
-    <a mat-menu-item routerLink="registrati">
+    <a mat-menu-item routerLink="registrati" *ngIf="!showLink()">
       Registrati
     </a>
-    <a mat-menu-item routerLink="recupera-password">
+    <a mat-menu-item routerLink="recupera-password" *ngIf="!showLink()">
       Recupera password
+    </a>
+    <a mat-menu-item routerLink="profilo" *ngIf="showLink()">
+      Profilo
+    </a>
+    <a mat-menu-item routerLink="welcomeback" *ngIf="showLink()" (click)="onLogout()">
+      Logout
     </a>
   </mat-menu>
   <span><a routerLink="/">Home</a></span>

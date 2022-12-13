@@ -13,3 +13,7 @@ a{
   cursor: pointer;
   font-weight: 600;
 }
+
+input.ng-invalid, .error {
+  color: #f44336 !important;
+}

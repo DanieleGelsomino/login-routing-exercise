@@ -7,6 +7,8 @@ import { PasswordRecoveryComponent } from './componenti/password-recovery/passwo
 import { NotfoundComponent } from './componenti/notfound/notfound.component';
 import { WelcomeComponent } from './componenti/welcome/welcome.component';
 import { WelcomebackComponent } from './componenti/welcomeback/welcomeback.component';
+import { AuthGuard } from './auth/auth.guard';
+import { ProfileUserComponent } from './componenti/profile-user/profile-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,8 +16,17 @@ const routes: Routes = [
   { path: 'registrati', component: SigninComponent },
   { path: 'login', component: LoginComponent },
   { path: 'recupera-password', component: PasswordRecoveryComponent },
-  { path: 'welcome', component: WelcomeComponent },
-  { path: 'welcomeback', component: WelcomebackComponent },
+  { path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuard] },
+  {
+    path: 'welcomeback',
+    component: WelcomebackComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'profilo',
+    component: ProfileUserComponent,
+    canActivate: [AuthGuard],
+  },
   { path: '404', component: NotfoundComponent },
   { path: '**', redirectTo: '/404' },
 ];
